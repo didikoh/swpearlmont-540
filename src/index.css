@@ -1,0 +1,56 @@
+body {
+  margin: 0;
+}
+
+.loading-screen {
+  position: absolute;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  background-color: black;
+  flex-direction: column;
+  gap: 50px;
+  color: white;
+}
+
+.loading-screen-spinner {
+  width: 50px;
+  height: 50px;
+  border: 10px solid rgba(0, 0, 0, 0.1); /* Light border */
+  border-top: 9px solid #d29a62; /* Blue border */
+  border-radius: 50%; /* Circular shape */
+  animation: spin 1s linear infinite; /* Spin animation */
+}
+
+.loading-progress-bar {
+  width: 50%;
+  height: 10px;
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+.loading-progress-bar-fill {
+  height: 100%;
+  background-color: #d29a62;
+  transition: width 0.3s ease;
+}
+
+.loading-progress-text {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #d29a62; /* Match the color of the progress bar */
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

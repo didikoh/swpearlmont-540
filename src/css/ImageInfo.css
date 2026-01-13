@@ -1,0 +1,57 @@
+.imageInfo {
+  z-index: 4;
+  position: absolute;
+  inset: 0;
+  display: flex;
+  padding: 50px;
+  box-sizing: border-box;
+  justify-content: center;
+}
+
+.imageInfo-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.btn {
+  height: 100%;
+  border: none;
+  background: none;
+  width: 80px;
+  cursor: pointer;
+  color: white;
+  z-index: 1;
+
+  svg {
+    width: 80%;
+    height: auto;
+  }
+}
+
+.images {
+  width: calc(100% - 160px);
+  height: 100%;
+  object-fit: contain;
+  z-index: 1;
+}
+
+.close {
+  position: fixed;
+  z-index: 1;
+  top: 20px;
+  right: 20px;
+  height: 40px;
+  width: 40px;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 50%;
+  background: none;
+  cursor: pointer;
+  padding: 0;
+  color: white;
+
+  svg {
+    width: 100%;
+    height: auto;
+  }
+}

@@ -1,0 +1,30 @@
+#root {
+  inset: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.logo {
+  height: 50px;
+  width: 300px;
+  position: fixed;
+  top: 25px;
+  left: 50px;
+  z-index: 1;
+  align-items: left;
+
+  img {
+    height: 100%;
+    display: block;
+  }
+}
+
+.demo-text {
+  position: fixed;
+  bottom: 35px;
+  left: 50px;
+  font-size: 4rem;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.7);
+  z-index: 1;
+}
