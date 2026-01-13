@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import Model from "./components/MyScene";
-import UI from "./components/UI";
-import Chat from "./components/Chat";
-import { useAppContext } from "@context/AppContext";
-import ImageInfo from "./components/ImageInfo";
+// import UI from "./components/UI";
+// import Chat from "./components/Chat";
+// import { useAppContext } from "@context/AppContext";
+// import ImageInfo from "./components/ImageInfo";
 import "./App.css";
 
 const App = () => {
-  const { chatVisible, setChatVisible } = useAppContext();
+  // const { chatVisible, setChatVisible } = useAppContext();
   const [progress, setProgress] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -35,9 +35,9 @@ const App = () => {
         </div>
       )}
       <Model onProgress={setProgress} />
-      <UI />
-      <ImageInfo />
-      {chatVisible && <Chat onClose={() => setChatVisible(false)} />}
+      {/* <UI /> */}
+      {/* <ImageInfo /> */}
+      {/* {chatVisible && <Chat onClose={() => setChatVisible(false)} />} */}
     </div>
   );
 };

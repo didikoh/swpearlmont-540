@@ -70,6 +70,11 @@ const MyScene = ({ onProgress }: any) => {
         }
       });
 
+      currentScene.materials.forEach((mat) => {
+        if (mat.name.includes("Map_") && mat instanceof PBRMaterial) {
+           mat.indexOfRefraction = 1;
+        }
+      });
       // const resetCam = () => {
       //   currentCamera.fov = 1.3;
       //   currentCamera.target = new Vector3(-2151.5, 108.5, 4523);
@@ -196,10 +201,10 @@ const MyScene = ({ onProgress }: any) => {
             return;
           }
 
-          const KNOWN_TOTAL = 165933856;
+          const KNOWN_TOTAL = 127534804;
 
           // 加载模型
-          ImportMeshAsync("./models/Puchong_Horizon_Masterfile.glb", scene, {
+          ImportMeshAsync("./models/Pearlmont.glb", scene, {
             onProgress: (ev) => {
               // ev 的结构见 ISceneLoaderProgressEvent
               // { lengthComputable, loaded, total }
@@ -246,10 +251,10 @@ const MyScene = ({ onProgress }: any) => {
           // 创建相机
           const camera = new ArcRotateCamera(
             "my_camera", // 相机名称
-            2.2, // 水平旋转角度
-            1.25, // 垂直旋转角度
-            900, // 相机半径
-            new Vector3(0, 10, 0), // 相机目标位置
+            3.5, // 水平旋转角度
+            1.37, // 垂直旋转角度
+            960, // 相机半径
+            new Vector3(180, 0, -75), // 相机目标位置
             scene // 所属场景
           );
           camera.attachControl(canvas, true); // 绑定相机到 canvas 上
@@ -263,7 +268,7 @@ const MyScene = ({ onProgress }: any) => {
           camera.angularSensibilityY = 2500; // 垂直旋转灵敏度
           camera.angularSensibilityX = 2500; // 水平旋转灵敏度
           camera.minZ = 10; // 最小可视距离（靠得最近）
-          camera.maxZ = 15000; // 最大可视距离（最远能看到多远）
+          camera.maxZ = 0; // 最大可视距离（最远能看到多远）
           camera.speed = 1; // 相机移动速度
           camera.fov = 1;
 
@@ -289,7 +294,7 @@ const MyScene = ({ onProgress }: any) => {
           const skybox = scene.createDefaultSkybox(
             skyTexture,
             true,
-            30000,
+            100000,
             0.05
           ); // 创建天空盒
           skyTextureRef.current = skybox;
